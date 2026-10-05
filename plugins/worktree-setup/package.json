@@ -1,0 +1,11 @@
+{
+  "name": "@rebelliard/opencode-worktree-setup",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "index.ts",
+  "license": "MIT",
+  "opencode": {
+    "plugin": "./index.ts"
+  }
+}
