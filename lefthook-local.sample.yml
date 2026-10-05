@@ -1,0 +1,26 @@
+# 🥊 Personal overrides for lefthook.yml
+#
+# 🐣 Get started:
+# - cp lefthook-local.sample.yml lefthook-local.yml
+#
+# 🔓 Uncomment any section below to customize your local hooks.
+
+# ── Skip individual pre-commit commands ────────────────────────────────
+# pre-commit:
+#   commands:
+#     format-biome:
+#       skip: true
+#     format-markdown:
+#       skip: true
+
+# ── Skip individual pre-push commands ──────────────────────────────────
+# pre-push:
+#   commands:
+#     format-check:
+#       skip: true
+
+# ── Add your own command ───────────────────────────────────────────────
+# pre-commit:
+#   commands:
+#     hello:
+#       run: echo "Hello 🌎"

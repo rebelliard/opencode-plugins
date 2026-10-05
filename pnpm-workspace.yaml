@@ -1,0 +1,8 @@
+packages:
+  - "plugins/*"
+
+minimumReleaseAge: 10080
+
+# Types-only devDependencies that must track the installed OpenCode release.
+minimumReleaseAgeExclude:
+  - "@opencode/*"

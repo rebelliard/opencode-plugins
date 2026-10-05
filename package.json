@@ -1,0 +1,33 @@
+{
+  "name": "opencode-plugins",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "OpenCode plugins by Rafael Belliard.",
+  "license": "MIT",
+  "packageManager": "pnpm@10.32.0",
+  "engines": {
+    "node": ">=24.13"
+  },
+  "scripts": {
+    "hook:install": "lefthook install",
+    "hook:precommit": "lefthook run pre-commit",
+    "hook:prepush": "lefthook run pre-push",
+    "check": "pnpm format:check && pnpm typecheck && pnpm test:coverage",
+    "format": "biome check --write . && prettier --config .git-hooks/prettierrc.markdown.json --write \"**/*.{md,mdx}\"",
+    "format:check": "biome ci . && prettier --config .git-hooks/prettierrc.markdown.json --check \"**/*.{md,mdx}\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.13",
+    "@opencode/plugin": "2.0.23",
+    "@types/node": "24.13.4",
+    "@vitest/coverage-v8": "5.0.1",
+    "lefthook": "^1.13.6",
+    "prettier": "^3.8.3",
+    "typescript": "5.9.3",
+    "vitest": "5.0.1"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "hooks": {
+    "afterFileEdit": [
+      {
+        "command": ".claude/hooks/biome-format.sh"
+      },
+      {
+        "command": ".claude/hooks/markdown-format.sh"
+      }
+    ],
+    "afterTabFileEdit": [
+      {
+        "command": ".claude/hooks/biome-format.sh"
+      },
+      {
+        "command": ".claude/hooks/markdown-format.sh"
+      }
+    ]
+  }
+}

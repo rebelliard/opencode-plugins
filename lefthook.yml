@@ -1,0 +1,40 @@
+# 🥊 Lefthook manages Git hooks declaratively.
+# - Commands defined here run automatically on git events like commit
+#   or push — only on staged files, with partial staging support.
+# - See https://lefthook.dev/
+#
+# 👀 How to opt-in:
+# - brew install lefthook   # or rely on the devDependency via pnpm
+# - pnpm hook:install
+#
+# 🚫 How to skip once:
+# - LEFTHOOK=0 git commit -m "msg"
+#
+# 🤓 How to create personal overrides:
+# - copy lefthook-local.sample.yml to lefthook-local.yml
+#
+lefthook: 'pnpm exec lefthook'
+
+pre-commit:
+  skip:
+    - merge
+    - merge-commit
+    - rebase
+  parallel: true
+  commands:
+    format-biome:
+      # 🔢 Runs biome check --write on staged files (local binary with npx fallback)
+      run: bash .git-hooks/format-staged-files.sh {staged_files}
+      stage_fixed: true
+    format-markdown:
+      # 📝 Runs prettier --write on staged Markdown files (bunx with npx fallback)
+      glob: '*.{md,mdx}'
+      run: bash .git-hooks/format-staged-markdown.sh {staged_files}
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  commands:
+    format-check:
+      # ✅ Repo-wide format verification before push
+      run: pnpm format:check

@@ -1,0 +1,12 @@
+node_modules/
+dist/
+coverage/
+.DS_Store
+
+AGENTS.local.md
+.opencode/plans/
+.openchamber/plans/
+.agents/worktrees/
+.cursor/hooks/state/
+.env.local
+lefthook-local.yml
