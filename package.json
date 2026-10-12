@@ -21,7 +21,7 @@
     "test:coverage": "vitest run --coverage"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.13",
+    "@biomejs/biome": "^2.5.15",
     "@opencode/plugin": "2.0.23",
     "@types/node": "24.13.4",
     "@vitest/coverage-v8": "5.0.1",
